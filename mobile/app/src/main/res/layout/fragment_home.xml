@@ -9,6 +9,7 @@
             android:id="@+id/verticalRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
             android:orientation="vertical"
             app:spanCount="2"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
