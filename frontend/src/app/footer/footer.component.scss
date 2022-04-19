@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 15px 0px;
+  padding: 0;
+  background-color: #d9d5d5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  min-width: 600px;
+  justify-content: space-around;
+}
+
+nav a{
+  text-decoration: none;
+}
+

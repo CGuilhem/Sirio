@@ -1,0 +1,19 @@
+<header>
+  <a routerLink="">
+    <img alt="logo sirio" class="logo" src="assets/logo_sirio.png">
+  </a>
+  <form class="form-inline" mdbWavesEffect>
+    <div>
+      <input class="form-control" placeholder="Search" type="text">
+    </div>
+  </form>
+  <nav>
+    <a class="cta" routerLink="connexion">
+      <button color="primary" mat-stroked-button>Se connecter</button>
+    </a>
+    <a class="cta" routerLink="panier">
+      <span matBadge="{{nbProduitPanier}}" matBadgeSize="large"></span>
+      <button color="primary" mat-stroked-button>Panier</button>
+    </a>
+  </nav>
+</header>

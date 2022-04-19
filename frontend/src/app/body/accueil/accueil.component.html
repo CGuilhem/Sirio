@@ -1,0 +1,6 @@
+<h1>Produits populaires</h1>
+<main *ngIf="produitPopulaires.length > 0">
+  <div *ngFor="let produit of produitPopulaires; index as i">
+      <app-produit [produitIndex]="i"></app-produit>
+  </div>
+</main>

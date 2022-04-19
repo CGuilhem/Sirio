@@ -1,0 +1,12 @@
+*{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+app-produit{
+  max-width: 40em;
+  min-width: 30em;
+  height: auto;
+  padding: 1% 8%;
+}

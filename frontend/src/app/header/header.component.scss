@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #d9d5d5;
+}
+
+.form-control {
+  width: 550px;
+}
+
+a, button{
+  font-weight: 500;
+  font-size: 20px;
+  color: black;
+  margin-right: 20px;
+}
+
+span {
+  margin-right: 8px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5% 5%;
+}
+
+img {
+  max-height: 2em;
+}
