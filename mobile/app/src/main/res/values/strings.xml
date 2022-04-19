@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GTA_SIRO</string>
+    <!-- Menu -->
+    <string name="menu_home">Home</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="menu_cart">Cart</string>
+    <string name="menu_account">Account</string>
+
+    <!-- Page d'accueil -->
+
+    <!-- Page de recherche -->
+
+    <!-- Page de favoris-->
+
+    <!-- Page du panier-->
+
+    <!-- Page du compte-->
+
+</resources>
