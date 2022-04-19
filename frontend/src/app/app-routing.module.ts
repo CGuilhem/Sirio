@@ -6,6 +6,7 @@ import {ConnexionComponent} from "./body/connexion/connexion.component";
 import {PanierComponent} from "./body/panier/panier.component";
 import {ContactComponent} from "./body/contact/contact.component";
 import {LegalMentionsComponent} from "./body/legal-mentions/legal-mentions.component";
+import {InscriptionComponent} from "./body/inscription/inscription.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'mentionsLegals',
     component: LegalMentionsComponent
+  },
+  {
+    path: 'inscription',
+    component: InscriptionComponent
   }
 ];
 

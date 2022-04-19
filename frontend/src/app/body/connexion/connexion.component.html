@@ -1,18 +1,23 @@
-<h1>Authentification</h1>
 <main id="connexionMain">
-  <h2>Login</h2>
+  <h2>Connexion</h2>
   <form action="" id="connexionForm" method="post">
     <label for="email"><b>Email</b></label>
     <input id="email" placeholder="exemple@gmail.com" required type="email">
 
-    <label for="psw"><b>Password</b></label>
+    <label for="psw"><b>Mot de passe</b></label>
     <input id="psw" required type="password">
 
     <div>
       <input id="remember" type="checkbox">
-      <label for="remember">Remember me</label>
+      <label for="remember">Rester connecté</label>
     </div>
 
-    <button color="primary" mat-flat-button>Sign In</button>
+    <button color="primary" mat-flat-button>Se connecter</button>
   </form>
+  <div>
+    <p>Pas encore de compte?</p>
+    <a class="cta" routerLink="../inscription">
+      <button mat-stroked-button>Creer compte</button>
+    </a>
+  </div>
 </main>

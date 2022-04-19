@@ -15,6 +15,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { ContactComponent } from './body/contact/contact.component';
 import { ProduitComponent } from './body/accueil/produit/produit.component';
 import { LegalMentionsComponent } from './body/legal-mentions/legal-mentions.component';
+import { InscriptionComponent } from './body/inscription/inscription.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LegalMentionsComponent } from './body/legal-mentions/legal-mentions.com
     ContactComponent,
     ProduitComponent,
     LegalMentionsComponent,
+    InscriptionComponent,
   ],
   imports: [
     BrowserModule,
