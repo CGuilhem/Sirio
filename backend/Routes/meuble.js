@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// const auth = require('../middleware/auth');
-// const multer = require('../middleware/multer-config');
+const authentification = require('../Middlewares/auth');
+const multer = require('../Middlewares/multer-config');
 
 const meubleController = require('../Controllers/meuble');
 
@@ -14,8 +14,10 @@ router.use((req, res, next) => {       // Ajout de headers pour éviter les erre
 });
 
 router.get('/', meubleController.getAllMeubles);
-/*router.post('/', auth, multer, stuffCtrl.createThing);
-router.get('/:id', auth, stuffCtrl.getOneThing);
+router.get('/:id', meubleController.getOneMeuble);
+router.post('/', authentification.isAuthenticated, multer, meubleController.createMeuble);
+
+/*
 router.put('/:id', auth, multer, stuffCtrl.modifyThing);
 router.delete('/:id', auth, stuffCtrl.deleteThing);*/
 
