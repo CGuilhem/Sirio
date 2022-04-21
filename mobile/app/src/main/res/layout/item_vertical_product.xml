@@ -34,6 +34,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             android:text="Nom du produit Nom du produit"/>
         <TextView
+            android:id="@+id/textViewProductPrice"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -43,6 +44,7 @@
             android:text="Prix $$$"/>
 
     <ImageView
+        android:id="@+id/imageViewFavorite"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/ic_favorties"

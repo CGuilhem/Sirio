@@ -7,7 +7,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.duarte.gta_siro_mobile.R
 
-class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ViewHolder>(){
+class ProductAdapter(private val layoutId : Int) : RecyclerView.Adapter<ProductAdapter.ViewHolder>(){
     //Boite permettant de ranger les composants
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         //image du produit
@@ -15,7 +15,7 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ViewHolder>(){
     }
     //Permet d'injecter notre layout
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_vertical_product, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(layoutId, parent, false)
         return ViewHolder(view)
     }
 

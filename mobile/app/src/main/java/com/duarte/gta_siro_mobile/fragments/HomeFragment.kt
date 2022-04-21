@@ -22,7 +22,7 @@ class HomeFragment : Fragment() {
         val verticalRecyclerView = view.findViewById<RecyclerView>(R.id.verticalRecyclerView)
 
         //Charger les plantes
-        verticalRecyclerView.adapter = ProductAdapter()
+        verticalRecyclerView.adapter = ProductAdapter(R.layout.item_vertical_product)
 
         return view
     }
