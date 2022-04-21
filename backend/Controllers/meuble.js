@@ -17,7 +17,7 @@ exports.getOneMeuble = (req, res, next) => {
 }
 
 exports.getOneCategorie = (req, res, next) => {
-    console.log("Requête getOneCategorieOfMeuble");
+    console.log("Requête getOneCategorie");
 
     Meuble.find({ categorie: req.params.categorie })
       .then(categorie => res.status(200).json(categorie))
