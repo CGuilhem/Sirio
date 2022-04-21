@@ -12,5 +12,6 @@ router.use((req, res, next) => {       // Ajout de headers pour éviter les erre
 
 router.post('/signup', userController.signup);
 router.post('/login', userController.login);
+router.post('/google', userController.signupGoogle)
 
 module.exports = router;
