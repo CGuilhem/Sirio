@@ -24,7 +24,7 @@
         android:layout_marginTop="@dimen/default_subTitle"
         app:layout_constraintStart_toStartOf="@id/app_title"
         app:layout_constraintTop_toTopOf="@id/app_title"
-        android:text="@string/produit_parmis_les_mieux_not_s"
+        android:text="@string/most_liked_product"
         android:textSize="20dp"
         android:textStyle="bold" />
 

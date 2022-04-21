@@ -6,7 +6,11 @@
     <string name="menu_favorites">Favorites</string>
     <string name="menu_cart">Cart</string>
     <string name="menu_account">Account</string>
-    <string name="produit_parmis_les_mieux_not_s">Produits parmis les mieux notés</string>
+    <string name="most_liked_product">Most liked products</string>
+
+    <!-- Produit-->
+    <string name="product_name">Product name</string>
+    <string name="product_price">Product price</string>
 
     <!-- Page d'accueil -->
 
