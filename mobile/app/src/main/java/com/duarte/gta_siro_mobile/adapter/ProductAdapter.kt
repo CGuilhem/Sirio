@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.duarte.gta_siro_mobile.R
+import com.duarte.gta_siro_mobile.model.ProductModel
 
-class ProductAdapter(private val layoutId : Int) : RecyclerView.Adapter<ProductAdapter.ViewHolder>(){
+class ProductAdapter(private val productList : List<ProductModel>, private val layoutId : Int) : RecyclerView.Adapter<ProductAdapter.ViewHolder>(){
     //Boite permettant de ranger les composants
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         //image du produit
@@ -19,8 +20,12 @@ class ProductAdapter(private val layoutId : Int) : RecyclerView.Adapter<ProductA
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) { }
+    //Permet de recupérer les informations des produits
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val currentProduct = productList[position]
+
+    }
 
     //Permet de générer le nombre d'item désiré
-    override fun getItemCount(): Int = 8
+    override fun getItemCount(): Int = productList.size
 }
