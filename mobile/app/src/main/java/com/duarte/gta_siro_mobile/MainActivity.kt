@@ -2,6 +2,7 @@ package com.duarte.gta_siro_mobile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.duarte.gta_siro_mobile.fragments.FavoritesFragment
 import com.duarte.gta_siro_mobile.fragments.HomeFragment
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
         //Injection du frament
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, HomeFragment(this))     //Remplace le contenu du container dans le layout
+        transaction.replace(R.id.fragment_container, FavoritesFragment(this))     //Remplace le contenu du container dans le layout
         transaction.addToBackStack(null)                           //Ne pas avoir de retour sur ce composant
         transaction.commit()                                             //Renvoyer ce composant
 
