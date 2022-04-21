@@ -7,9 +7,25 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ProduitComponent implements OnInit {
 
-  @Input() produitIndex: number;
+  @Input() produitCategorie: string;
+  @Input() produitDescription: string;
+  @Input() produitImagesUrl: [string];
+  @Input() produitNom: string;
+  @Input() produitNote: number;
+  @Input() produitPrix: number;
+  @Input() produitStock: number;
+  @Input() produitId: string;
+
+
   constructor() {
-    this.produitIndex = 0;
+    this.produitCategorie = "";
+    this.produitDescription = "";
+    this.produitImagesUrl = [""];
+    this.produitNom = "";
+    this.produitNote = 0;
+    this.produitPrix = 0;
+    this.produitStock = 0;
+    this.produitId = "";
   }
 
   ngOnInit(): void {

@@ -1,6 +1,15 @@
 <h1>Produits populaires</h1>
 <main *ngIf="produitPopulaires.length > 0">
-  <div *ngFor="let produit of produitPopulaires; index as i">
-      <app-produit [produitIndex]="i"></app-produit>
+  <div *ngFor="let produit of produits; index as i">
+    <app-produit
+      [produitCategorie]="produit.categorie"
+      [produitDescription]="produit.description"
+      [produitId]="produit.id"
+      [produitImagesUrl]="produit.imagesUrl"
+      [produitNom]="produit.nom"
+      [produitNote]="produit.note"
+      [produitPrix]="produit.prix"
+      [produitStock]="produit.stock"
+    ></app-produit>
   </div>
 </main>
