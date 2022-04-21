@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardiViewProduct"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <ImageView
+            android:id="@+id/imageItem"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@color/black"
+            android:scaleType="centerCrop"
+            android:src="@drawable/soundcloud1" />
+    </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textViewProductName"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/cardiViewProduct"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="Nom du produit Nom du produit"/>
+        <TextView
+            android:id="@+id/textViewProductPrice"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="13dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProductName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="Prix $$$"/>
+
+    <ImageView
+        android:id="@+id/imageViewFavorite"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_not_favorite"
+        app:tint="@color/darkGray"
+        app:layout_constraintLeft_toRightOf="@+id/textViewProductName"
+        app:layout_constraintTop_toBottomOf="@id/cardiViewProduct"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
