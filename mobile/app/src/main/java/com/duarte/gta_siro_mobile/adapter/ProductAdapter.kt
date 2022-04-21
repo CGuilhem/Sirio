@@ -49,16 +49,18 @@ class ProductAdapter(val context : MainActivity, private val productList : List<
         }else{
             holder.favoriteIcon.setImageResource(R.drawable.ic_not_favorite)
         }
+
         //Interaction sur le bouton like
         holder.favoriteIcon.setOnClickListener{
             //Inverse ou non si le bouton est like ou pas
             currentProduct.liked = !currentProduct.liked
             //Met à jour l'objet produit
+
         }
         //Interaction lors du click sur un produit (popup)
         holder.itemView.setOnClickListener{
             //affichage de la popup
-            ProductPopup(this).show()
+            ProductPopup(this, currentProduct).show()
         }
     }
 

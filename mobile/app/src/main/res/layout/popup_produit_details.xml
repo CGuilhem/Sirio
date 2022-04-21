@@ -16,6 +16,7 @@
         android:layout_height="80dp">
 
         <ImageView
+            android:id="@+id/imageItem_Product"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
