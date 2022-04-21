@@ -16,6 +16,14 @@ exports.getOneMeuble = (req, res, next) => {
       .catch(error => res.status(404).json({ error }));
 }
 
+exports.getOneCategorie = (req, res, next) => {
+    console.log("Requête getOneCategorieOfMeuble");
+
+    Meuble.find({ categorie: req.params.categorie })
+      .then(categorie => res.status(200).json(categorie))
+      .catch(error => res.status(404).json({ error }));
+}
+
 exports.createMeuble = (req, res, next) => {
     console.log("Requête createMeuble");
 

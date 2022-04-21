@@ -15,6 +15,7 @@ router.use((req, res, next) => {       // Ajout de headers pour éviter les erre
 
 router.get('/', meubleController.getAllMeubles);
 router.get('/:id', meubleController.getOneMeuble);
+router.get('/:categorie', meubleController.getOneCategorie);
 router.post('/', authentification.isAuthenticated, multer, meubleController.createMeuble);
 
 /*
