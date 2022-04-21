@@ -10,7 +10,9 @@
 
     <!-- Produit-->
     <string name="product_name">Product name</string>
-    <string name="product_price">Product price</string>
+    <string name="title_product_price">Product price</string>
+    <string name="product_price">$ $ $</string>
+
 
     <!-- Page d'accueil -->
 

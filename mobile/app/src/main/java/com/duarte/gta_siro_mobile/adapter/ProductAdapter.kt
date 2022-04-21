@@ -10,10 +10,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.duarte.gta_siro_mobile.MainActivity
+import com.duarte.gta_siro_mobile.ProductPopup
 import com.duarte.gta_siro_mobile.R
 import com.duarte.gta_siro_mobile.model.ProductModel
 
-class ProductAdapter(private val context : MainActivity, private val productList : List<ProductModel>, private val layoutId : Int) : RecyclerView.Adapter<ProductAdapter.ViewHolder>(){
+class ProductAdapter(val context : MainActivity, private val productList : List<ProductModel>, private val layoutId : Int) : RecyclerView.Adapter<ProductAdapter.ViewHolder>(){
     //Boite permettant de ranger les composants
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         //Image du produit
@@ -53,7 +54,11 @@ class ProductAdapter(private val context : MainActivity, private val productList
             //Inverse ou non si le bouton est like ou pas
             currentProduct.liked = !currentProduct.liked
             //Met à jour l'objet produit
-
+        }
+        //Interaction lors du click sur un produit (popup)
+        holder.itemView.setOnClickListener{
+            //affichage de la popup
+            ProductPopup(this).show()
         }
     }
 
