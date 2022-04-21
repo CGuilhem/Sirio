@@ -14,7 +14,7 @@ mongoose.connect('mongodb+srv://Go-fullstack:rxFpULW7t8iQ37v@go-fullstack.g95yy.
 const app = express();
 
 
-app.use(express.json()); // Pour pouvoir lire les corps des requêtes
+app.use(express.json()); // Pour pouvoir lire les corps des requêtes application/json
 
 //app.use('/Images', express.static(path.join(__dirname, 'Images')));
 
