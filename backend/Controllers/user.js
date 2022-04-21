@@ -21,6 +21,23 @@ exports.signup = (req, res, next) => {
       .catch(error => res.status(500).json({ error }));
 };
 
+exports.createAdmin = (req, res, next) => {
+  console.log("Requête createAdmin");
+
+  bcrypt.hash(req.body.password, 10)
+    .then(hash => {
+      const user = new User({
+        email: req.body.email,
+        password: hash,
+        isAdministrator: true
+      });
+      user.save()
+        .then(() => res.status(201).json({ message: 'Administrateur créé !' }))
+        .catch(error => res.status(400).json({ error }));
+    })
+    .catch(error => res.status(500).json({ error }));
+};
+
 exports.login = (req, res, next) => {
     console.log("Requête login");
 
@@ -37,7 +54,7 @@ exports.login = (req, res, next) => {
             res.status(200).json({
               userId: user._id,
               token: jsonWebToken.sign(
-                  { userId: user._id },
+                  { userId: user._id, isAdministrator: user.isAdministrator },
                   'RANDOM_TOKEN_SECRET',
                   { expiresIn: '24h' }
               )

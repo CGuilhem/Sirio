@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const userController = require('../Controllers/user');
+const authentification = require('../Middlewares/auth');
 
 router.use((req, res, next) => {       // Ajout de headers pour éviter les erreurs cross, comme nos deux parties n'ont pas la même origine. Les requêtes sont automatiquement bloquées par le navigateur
     res.setHeader('Access-Control-Allow-Origin', '*'); // Accès depuis n'importe quelle origine
@@ -12,6 +13,7 @@ router.use((req, res, next) => {       // Ajout de headers pour éviter les erre
 
 router.post('/signup', userController.signup);
 router.post('/login', userController.login);
+router.post('/admin', authentification.isAuthenticated, authentification.isAdministrator, userController.createAdmin);
 router.post('/google', userController.signupGoogle)
 
 module.exports = router;
