@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test</title>
+    </head>
+    <body>
+        <form>
+
+            email = <input type="text" name="email"/>
+    
+            password = <input type="text" name="password"/>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+    <script>
+         function handleSubmit(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            const json = Object.fromEntries(data.entries());
+
+            console.log({ json });
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://127.0.0.1:3000/api/auth/signup');
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-type", "application/json");
+
+            xhr.send(json);
+        }
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', handleSubmit);
+    </script>
+</html>
