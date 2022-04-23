@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const cookieParser = require('cookie-parser');
 const jsonWebToken = require('jsonwebtoken');
 
 const User = require('../Models/User');
@@ -52,18 +53,25 @@ exports.login = (req, res, next) => {
             if (!valid) {
               return res.status(401).json({ error: 'Mot de passe incorrect !' });
             }
-            res.status(200).json({
-              userId: user._id,
-              token: jsonWebToken.sign(
-                  { userId: user._id, isAdministrator: user.isAdministrator },
-                  'RANDOM_TOKEN_SECRET',
-                  { expiresIn: '24h' }
-              )
+
+            const cookie_auth = jsonWebToken.sign({ userId: user._id, isAdministrator: user.isAdministrator },'RANDOM_TOKEN_SECRET', { expiresIn: '24h' });
+          
+            res.cookie("cookie_auth", cookie_auth, {
+              httpOnly: true
             });
+
+            res.status(200).json( {message: "Utilisateur connecté" }).send();
           })
           .catch(error => res.status(500).json({ error }));
       })
       .catch(error => res.status(500).json({ error }));
+};
+
+exports.disconnect = (req, res, next) => {
+  console.log("Requête disconnect");
+
+  res.clearCookie("cookie_auth");
+  res.status(200).json({ message: 'Utilisateur déconnecté !' });
 };
 
 exports.signupGoogle = (req, res, next) => {

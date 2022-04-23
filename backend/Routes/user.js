@@ -13,6 +13,7 @@ router.use((req, res, next) => {       // Ajout de headers pour éviter les erre
 
 router.post('/signup', userController.signup);
 router.post('/login', userController.login);
+router.post('/disconnect', authentification.isAuthenticated, userController.disconnect);
 router.post('/admin', authentification.isAuthenticated, authentification.isAdministrator, userController.createAdmin);
 router.post('/google', userController.signupGoogle)
 
