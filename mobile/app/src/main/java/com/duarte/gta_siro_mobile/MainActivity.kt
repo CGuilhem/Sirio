@@ -61,7 +61,9 @@ class MainActivity : AppCompatActivity(){
         model.loadData()
 
         model.data.observe(this) {
-            
+            for (product in it) {
+                print(product.name)
+            }
         }
 
     }
