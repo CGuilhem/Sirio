@@ -7,7 +7,7 @@ data class ProductModel (
     @SerializedName("nom") val name : String = "Meuble",
     @SerializedName("categorie") val category : String = "Not available",
     @SerializedName("description") val description : String = "Not available",
-    @SerializedName("imagesUrl") val imageUrl : Array<String>,
+    @SerializedName("imagesUrl") val imageUrl : List<String>,
     @SerializedName("prix") val price : String = "Not available",
     @SerializedName("stock") val stock : Int = 0,
     @SerializedName("note") val rate : Int = 0,

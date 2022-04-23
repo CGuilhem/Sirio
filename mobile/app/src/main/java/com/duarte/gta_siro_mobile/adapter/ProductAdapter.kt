@@ -13,16 +13,19 @@ import com.duarte.gta_siro_mobile.ProductPopup
 import com.duarte.gta_siro_mobile.R
 import com.duarte.gta_siro_mobile.model.ProductModel
 
-class ProductAdapter(val context : MainActivity, private val productList : List<ProductModel>, private val layoutId : Int) : RecyclerView.Adapter<ProductAdapter.ViewHolder>(){
+class ProductAdapter(val context: MainActivity, private val productList: List<ProductModel>, private val layoutId: Int) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+
     //Boite permettant de ranger les composants
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         //Image du produit
         val productPicture = view.findViewById<ImageView>(R.id.imageItem)
+
         //Nom du produit en lien avec le layout
-        val productName:TextView? = view.findViewById<TextView>(R.id.textViewProductName)
-        val productPrice:TextView? = view.findViewById<TextView>(R.id.textViewProductPrice)
+        val productName: TextView? = view.findViewById<TextView>(R.id.textViewProductName)
+        val productPrice: TextView? = view.findViewById<TextView>(R.id.textViewProductPrice)
         val favoriteIcon = view.findViewById<ImageView>(R.id.imageViewFavorite)
     }
+
     //Permet d'injecter notre layout
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -42,21 +45,21 @@ class ProductAdapter(val context : MainActivity, private val productList : List<
         holder.productPrice?.text = currentProduct.price
 
         //vérifier si le produit est liké
-        if(currentProduct.liked){
+        if (currentProduct.liked) {
             holder.favoriteIcon.setImageResource(R.drawable.ic__favorite_red_24)
-        }else{
+        } else {
             holder.favoriteIcon.setImageResource(R.drawable.ic_not_favorite)
         }
 
         //Interaction sur le bouton like
-        holder.favoriteIcon.setOnClickListener{
+        holder.favoriteIcon.setOnClickListener {
             //Inverse ou non si le bouton est like ou pas
             currentProduct.liked = !currentProduct.liked
             //Met à jour l'objet produit
 
         }
         //Interaction lors du click sur un produit (popup)
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             //affichage de la popup
             ProductPopup(this, currentProduct).show()
         }

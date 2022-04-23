@@ -12,19 +12,17 @@ import java.io.StringReader
 //Sur le réseau quand Guilhem fait serveur
 //private const val URL_API_SEARCH = "http://192.168.20.149:3000/api/meuble"
 //En local que je suis chez moi
-private const val URL_API_SEARCH = "http://localhost:3000/api/meuble"
+private const val URL_API_SEARCH = "http://192.168.56.1:3000/api/meuble"
 
 class RequestUtils {
     companion object {
         private val client = OkHttpClient()
 
-        fun loadAllProducts(): ArrayList<ProductModel> {
-            val json =
-                sendGet("$URL_API_SEARCH")
-            //Parser le JSON avec le bon bean et GSON
+        fun loadAllProducts(): List<ProductModel> {
+            val json = sendGet("$URL_API_SEARCH")
             println("JSON :" + json)
-
-            val productList:ArrayList<ProductModel> = Gson().fromJson<ArrayList<ProductModel>>(json)
+            //Parser le JSON avec le bon bean et GSON
+            val productList:List<ProductModel> = Gson().fromJson<List<ProductModel>>(json)
             print("JSON CONVERTED :"+ productList)
 //            val data = Gson().fromJson(json, ProductModel::class.java)
             //Retourner la donnée

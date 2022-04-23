@@ -8,7 +8,7 @@ import kotlin.concurrent.thread
 
 class ProductViewModel : ViewModel() {
 
-    var data = MutableLiveData<ArrayList<ProductModel>>()
+    var data = MutableLiveData<List<ProductModel>>()
     var errorMessage = MutableLiveData<String?>()
 
     fun loadData() {
@@ -20,6 +20,9 @@ class ProductViewModel : ViewModel() {
 
             try {
                 data.postValue(RequestUtils.loadAllProducts())
+                data.value?.forEach(){
+
+                }
             } catch (e: Exception) {
                 errorMessage.postValue("Erreur : ${e.message}")
                 e.printStackTrace()

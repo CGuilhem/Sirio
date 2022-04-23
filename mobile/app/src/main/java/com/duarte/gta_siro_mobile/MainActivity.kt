@@ -59,6 +59,11 @@ class MainActivity : AppCompatActivity(){
         transaction.commit()
 
         model.loadData()
+
+        model.data.observe(this) {
+            
+        }
+
     }
 
 

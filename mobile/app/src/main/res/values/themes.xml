@@ -14,14 +14,10 @@
     </style>
     <!-- Bottom naviation view -->
     <style name="BottomNavigationBarStyle" parent="Widget.Design.BottomNavigationView">
-        <item name="android:textColor">@color/darkGray</item>
-        <item name="android:textSize">18sp</item>
-        <item name="fontFamily"></item>
+        <item name="android:textColor">@android:color/transparent</item>
     </style>
 
     <style name="BottomNavigationItem" parent="Widget.Design.BottomNavigationView">
-        <item name="android:textColor">@color/darkGray</item>
-        <item name="android:textSize">18sp</item>
-        <item name="fontFamily"></item>
+        <item name="android:textColor">@android:color/transparent</item>
     </style>
 </resources>
