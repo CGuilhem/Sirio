@@ -1,6 +1,5 @@
 package com.duarte.gta_siro_mobile.adapter
 
-import android.graphics.Color
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -26,6 +25,7 @@ class ProductAdapter(val context : MainActivity, private val productList : List<
     }
     //Permet d'injecter notre layout
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
         val view = LayoutInflater.from(parent.context).inflate(layoutId, parent, false)
         return ViewHolder(view)
     }
@@ -33,10 +33,8 @@ class ProductAdapter(val context : MainActivity, private val productList : List<
     //Permet de recupérer les informations des produits
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentProduct = productList[position]
-
         //Utilisation de la librairie Glide pour récupérer l'image à partir du lien
-        Glide.with(context).load(Uri.parse(currentProduct.imageUrl)).into(holder.productPicture) //Uri.parse() permet de convertir l'url de l'image en une action android
-
+//        Glide.with(context).load(Uri.parse(currentProduct.imageUrl)).into(holder.productPicture) //Uri.parse() permet de convertir l'url de l'image en une action android
         //Mettre à jour le nom du produit
         holder.productName?.text = currentProduct.name
 
