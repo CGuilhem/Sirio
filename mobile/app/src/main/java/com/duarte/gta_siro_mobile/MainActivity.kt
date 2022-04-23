@@ -61,8 +61,12 @@ class MainActivity : AppCompatActivity(){
         model.loadData()
 
         model.data.observe(this) {
-            for (product in it) {
-                print(product.name)
+            if (it == null) {
+
+            } else {
+                for (product in it) {
+                    print(product.name)
+                }
             }
         }
 
