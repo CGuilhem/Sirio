@@ -58,10 +58,10 @@ class ProductPopup(private val adapter: ProductAdapter, private val currentProdu
 //        Glide.with(adapter.context).load(Uri.parse(currentProduct.imageUrl)).into(productImage)
 
         //Actualiser le nom du produit dans la popup
-        findViewById<TextView>(R.id.popup_product_name).text = currentProduct.name
+        findViewById<TextView>(R.id.popup_product_name).text = currentProduct.nom
 
         //Actualiser le prix
-        findViewById<TextView>(R.id.product_price).text = currentProduct.price
+        findViewById<TextView>(R.id.product_price).text = currentProduct.prix.toString()
     }
 
 }

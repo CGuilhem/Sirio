@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.duarte.gta_siro_mobile.MainActivity
@@ -39,10 +40,10 @@ class ProductAdapter(val context: MainActivity, private val productList: List<Pr
         //Utilisation de la librairie Glide pour récupérer l'image à partir du lien
 //        Glide.with(context).load(Uri.parse(currentProduct.imageUrl)).into(holder.productPicture) //Uri.parse() permet de convertir l'url de l'image en une action android
         //Mettre à jour le nom du produit
-        holder.productName?.text = currentProduct.name
+        holder.productName?.text = currentProduct.nom
 
         //Mise à jour du prix
-        holder.productPrice?.text = currentProduct.price
+        holder.productPrice?.text = currentProduct.prix.toString()
 
         //vérifier si le produit est liké
         if (currentProduct.liked) {

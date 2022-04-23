@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.duarte.gta_siro_mobile.databinding.ActivityMainBinding
 import com.duarte.gta_siro_mobile.fragments.*
+import com.duarte.gta_siro_mobile.model.ProductModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(){
@@ -20,13 +21,16 @@ class MainActivity : AppCompatActivity(){
         // Chargemet des données
         model.loadData()
         // Test de l'affichage
+        var productList: List<ProductModel> = emptyList()
         model.data.observe(this) {
             if (it == null) {
 
             } else {
-                for (product in it) {
-                    print(product.name)
-                }
+                productList = it
+//                for (product in it) {
+//                    println(product.nom)
+//                    binding.pageTitle.setText(product.nom)
+//                }
             }
         }
 
