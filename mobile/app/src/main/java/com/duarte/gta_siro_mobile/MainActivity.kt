@@ -17,6 +17,19 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // Chargemet des données
+        model.loadData()
+        // Test de l'affichage
+        model.data.observe(this) {
+            if (it == null) {
+
+            } else {
+                for (product in it) {
+                    print(product.name)
+                }
+            }
+        }
+
 //        setContentView(R.layout.activity_main)
         loadFragment(HomeFragment(this), R.string.menu_home)
 
@@ -57,19 +70,6 @@ class MainActivity : AppCompatActivity(){
         transaction.replace(R.id.fragment_container, fragment)                                                                //Remplace le contenu du container dans le layout
         transaction.addToBackStack(null)                           //Ne pas avoir de retour sur ce composant
         transaction.commit()
-
-        model.loadData()
-
-        model.data.observe(this) {
-            if (it == null) {
-
-            } else {
-                for (product in it) {
-                    print(product.name)
-                }
-            }
-        }
-
     }
 
 
