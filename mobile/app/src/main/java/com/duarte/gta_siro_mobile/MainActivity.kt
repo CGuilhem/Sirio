@@ -35,14 +35,14 @@ class MainActivity : AppCompatActivity(){
         }
 
 //        setContentView(R.layout.activity_main)
-        loadFragment(HomeFragment(this), R.string.menu_home)
+        loadFragment(HomeFragment(this, productList), R.string.menu_home)
 
         //importer la bottom navigatio view
         val navigationView = findViewById<BottomNavigationView>(R.id.navigationView)
         navigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.menu_home_page -> {
-                    loadFragment(HomeFragment(this), R.string.menu_home)
+                    loadFragment(HomeFragment(this, productList), R.string.menu_home)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.menu_search_page -> {

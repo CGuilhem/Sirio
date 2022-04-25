@@ -14,14 +14,11 @@ import com.duarte.gta_siro_mobile.R
 import com.duarte.gta_siro_mobile.adapter.ProductAdapter
 import com.duarte.gta_siro_mobile.model.ProductModel
 
-class HomeFragment(private val context : MainActivity) : Fragment() {
-
+class HomeFragment(private val context : MainActivity, productsList : List<ProductModel>) : Fragment() {
+    val productList = productsList
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val model by lazy { ViewModelProvider(this).get(ProductViewModel::class.java) }
-        //Création d'une liste qui stock les produits
-        val productList = arrayListOf<ProductModel>()
-        //val productList = model.data
 
+        //Création d'une liste qui stock les produits
 //Enregistrement d'un premier produit dans la liste (bureau)
         val tabImage = arrayListOf<String>()
         tabImage.add("https://cdn.pixabay.com/photo/2017/08/01/23/51/apple-2568755_960_720.jpg")
