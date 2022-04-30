@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');  // Pour grandement faciliter les lectures et écritures avec MongoDB
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 
 //const path = require('path')
 
