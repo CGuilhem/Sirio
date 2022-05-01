@@ -1,14 +1,11 @@
 package com.duarte.gta_siro_mobile.adapter
 
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.duarte.gta_siro_mobile.MainActivity
 import com.duarte.gta_siro_mobile.ProductPopup
 import com.duarte.gta_siro_mobile.R
@@ -19,12 +16,14 @@ class ProductAdapter(val context: MainActivity, private val productList: List<Pr
     //Boite permettant de ranger les composants
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         //Image du produit
-        val productPicture = view.findViewById<ImageView>(R.id.imageItem)
+//        val productPicture = view.findViewById<ImageView>(R.id.imageItem)
 
         //Nom du produit en lien avec le layout
         val productName: TextView? = view.findViewById<TextView>(R.id.textViewProductName)
         val productPrice: TextView? = view.findViewById<TextView>(R.id.textViewProductPrice)
         val favoriteIcon = view.findViewById<ImageView>(R.id.imageViewFavorite)
+
+
     }
 
     //Permet d'injecter notre layout
@@ -45,15 +44,15 @@ class ProductAdapter(val context: MainActivity, private val productList: List<Pr
         //Mise à jour du prix
         holder.productPrice?.text = currentProduct.prix.toString()
 
-        //vérifier si le produit est liké
+//        //vérifier si le produit est liké
         if (currentProduct.liked) {
-            holder.favoriteIcon.setImageResource(R.drawable.ic__favorite_red_24)
+            holder.favoriteIcon?.setImageResource(R.drawable.ic__favorite_red_24)
         } else {
-            holder.favoriteIcon.setImageResource(R.drawable.ic_not_favorite)
+            holder.favoriteIcon?.setImageResource(R.drawable.ic_not_favorite)
         }
 
-        //Interaction sur le bouton like
-        holder.favoriteIcon.setOnClickListener {
+//        Interaction sur le bouton like
+        holder.favoriteIcon?.setOnClickListener {
             //Inverse ou non si le bouton est like ou pas
             currentProduct.liked = !currentProduct.liked
             //Met à jour l'objet produit
