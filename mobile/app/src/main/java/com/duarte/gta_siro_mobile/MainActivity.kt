@@ -27,11 +27,10 @@ class MainActivity : AppCompatActivity(){
                 //Ne rien faire
             } else {
                 productList = it
+                //Chargement par défaut
+                loadFragment(HomeFragment(this, productList), R.string.menu_home)
             }
         }
-
-//Chargement par défaut
-        loadFragment(HomeFragment(this, productList), R.string.menu_home)
 
         //importer la bottom navigation view
         val navigationView = findViewById<BottomNavigationView>(R.id.navigationView)

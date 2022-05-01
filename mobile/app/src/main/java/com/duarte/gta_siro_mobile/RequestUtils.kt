@@ -2,12 +2,17 @@ package com.duarte.gta_siro_mobile
 
 import com.duarte.gta_siro_mobile.model.ProductModel
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.decodeFromString
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.Response
+import java.io.IOException
 
 //Sur le réseau quand Guilhem fait serveur
 //private const val URL_API_SEARCH = "http://192.168.20.149:3000/api/meuble"
@@ -15,7 +20,7 @@ import kotlinx.serialization.decodeFromString
 private const val URL_API_SEARCH = "http://192.168.56.1:3000/api/meuble"
 
 class RequestUtils {
-    companion object {
+    companion object  {
         private val client = OkHttpClient()
 
         inline fun <reified T> Gson.fromJson(json: String) = fromJson<T>(json, object : TypeToken<T>() {}.type)
@@ -53,5 +58,27 @@ class RequestUtils {
                 response.body?.string() ?: ""
             }
         }
+
+        fun post(json: JSONObject?){
+//            val body: URI? = create(json, JSON)
+            println("Button Sign In cicked")
+            val jsonObject = JSONObject()
+            val mediaType = "application/json; charset=utf-8".toMediaType()
+            val body = jsonObject.toString().toRequestBody(mediaType)
+            // RequestBody body = RequestBody.create(JSON, json); // old
+            val request = Request.Builder()
+                .url(URL_API_SEARCH)
+                .post(body)
+                .build()
+
+            var response: Response? = null
+            try {
+                response = client.newCall(request).execute()
+                val resStr = response.body!!.string()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+
     }
 }

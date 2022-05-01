@@ -13,18 +13,20 @@
     <EditText
         android:id="@+id/editText_login"
         android:layout_width="390dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_margin="10dp"
         android:text="E-mail"
+        android:inputType="text"
         android:textColor="@color/gray"
         android:textSize="14dp" />
 
     <EditText
         android:id="@+id/editText_password"
         android:layout_width="390dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_margin="10dp"
         android:text="Password"
+        android:inputType="textPassword"
         android:textColor="@color/gray"
         android:textSize="14dp" />
 

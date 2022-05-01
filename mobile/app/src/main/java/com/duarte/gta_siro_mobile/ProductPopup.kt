@@ -55,7 +55,7 @@ class ProductPopup(private val adapter: ProductAdapter, private val currentProdu
     private fun setupComponents() {
         //Actualiser l'image du produit
         val productImage = findViewById<ImageView>(R.id.imageItem_Product)
-//        Glide.with(adapter.context).load(Uri.parse(currentProduct.imageUrl)).into(productImage)
+        Glide.with(adapter.context).load(Uri.parse(currentProduct.imagesUrl[0])).into(productImage)
 
         //Actualiser le nom du produit dans la popup
         findViewById<TextView>(R.id.popup_product_name).text = currentProduct.nom
