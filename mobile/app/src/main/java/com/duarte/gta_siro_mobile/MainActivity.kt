@@ -24,42 +24,38 @@ class MainActivity : AppCompatActivity(){
         var productList: List<ProductModel> = emptyList()
         model.data.observe(this) {
             if (it == null) {
-
+                //Ne rien faire
             } else {
                 productList = it
-//                for (product in it) {
-//                    println(product.nom)
-//                    binding.pageTitle.setText(product.nom)
-//                }
             }
         }
 
-//        setContentView(R.layout.activity_main)
+//Chargement par défaut
         loadFragment(HomeFragment(this, productList), R.string.menu_home)
 
-        //importer la bottom navigatio view
+        //importer la bottom navigation view
         val navigationView = findViewById<BottomNavigationView>(R.id.navigationView)
-        navigationView.setOnNavigationItemSelectedListener {
-            when(it.itemId){
+        navigationView.setOnItemSelectedListener { item->
+            when(item.itemId){
                 R.id.menu_home_page -> {
                     loadFragment(HomeFragment(this, productList), R.string.menu_home)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
                 R.id.menu_search_page -> {
                     loadFragment(SearchFragment(this), R.string.menu_search)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
-                R.id.menu_home_page -> {
-                    loadFragment(FavoritesFragment(this), R.string.menu_favorites)
-                    return@setOnNavigationItemSelectedListener true
+                R.id.menu_favorites_page -> {
+                    loadFragment(FavoritesFragment(this, productList), R.string.menu_favorites)
+                    true
                 }
-                R.id.menu_home_page -> {
+                R.id.menu_cart_page -> {
                     loadFragment(CartFragment(this), R.string.menu_cart)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
-                R.id.menu_home_page -> {
+                R.id.menu_account_page -> {
                     loadFragment(AccountFragment(this), R.string.menu_account)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
                 else -> false
             }

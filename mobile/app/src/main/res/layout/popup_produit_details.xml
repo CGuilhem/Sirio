@@ -29,14 +29,13 @@
         android:id="@+id/popup_product_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/product_name"
-        app:layout_constraintBottom_toBottomOf="@+id/cardiViewProduct"
-        app:layout_constraintStart_toEndOf="@id/cardiViewProduct"
-        app:layout_constraintTop_toTopOf="@+id/cardiViewProduct"
         android:layout_marginLeft="23dp"
+        android:text="@string/product_name"
         android:textSize="22dp"
         android:textStyle="bold"
-        />
+        app:layout_constraintBottom_toBottomOf="@+id/cardiViewProduct"
+        app:layout_constraintStart_toEndOf="@id/cardiViewProduct"
+        app:layout_constraintTop_toTopOf="@+id/cardiViewProduct" />
 
     <ImageView
         android:id="@+id/close_button"

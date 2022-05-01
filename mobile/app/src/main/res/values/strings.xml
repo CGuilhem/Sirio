@@ -13,6 +13,9 @@
     <string name="title_product_price">Product price</string>
     <string name="product_price">$ $ $</string>
     <string name="product_description">This is a good product description. This product description is soooooooooo long BLABLABLA.</string>
+    <string name="signIn">Sign in</string>
+    <string name="forgot_password">Forgot password ?</string>
+    <string name="create_account">Create account</string>
 
 
     <!-- Page d'accueil -->

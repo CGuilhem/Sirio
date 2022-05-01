@@ -15,24 +15,17 @@ import com.duarte.gta_siro_mobile.adapter.ProductAdapter
 import com.duarte.gta_siro_mobile.adapter.ProductItemDecoration
 import com.duarte.gta_siro_mobile.model.ProductModel
 
-class FavoritesFragment(private val context: MainActivity) : Fragment()  {
-    val model by lazy { ViewModelProvider(this).get(ProductViewModel::class.java) }
+class FavoritesFragment(private val context: MainActivity, productsList : List<ProductModel>) : Fragment()  {
+    val productList = productsList
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        //Création d'une liste qui stock les produits
-        var productList = arrayListOf<ProductModel>()
 
         val view = inflater?.inflate(R.layout.fragment_favorites, container, false)
 
         //Recupérer le recyclerView de favoris
         val favortitesRecyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_fav_VerticalList)
-        //ajouter le layout favorite_horizontal_info_product
-        //var product:List<ProductModel> = List()
-//        if(model.data.value != null)
-//        {
-//            productList = model.data.value!!
-//        }
-        favortitesRecyclerView?.adapter = ProductAdapter(context, productList, R.layout.item_vertical_product)
+
+        favortitesRecyclerView?.adapter = ProductAdapter(context, productList.filter { it.liked }, R.layout.item_horizontal_info_product)
         favortitesRecyclerView.layoutManager = LinearLayoutManager(context)
         //Permet d'espacer les produits
         favortitesRecyclerView.addItemDecoration(ProductItemDecoration())
