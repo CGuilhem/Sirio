@@ -14,3 +14,21 @@ input{
   padding: 5px;
   margin-bottom: 15px;
 }
+
+#connexionForm{
+  padding: 15px;
+}
+
+.connectionAnnexe{
+  display: flex;
+  flex-direction: column;
+}
+
+.connectionAnnexe > *{
+  margin: 10px;
+}
+
+.titrePage{
+  margin: 30px 30px;
+  border-bottom: solid;
+}
