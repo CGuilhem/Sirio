@@ -1,0 +1,59 @@
+
+
+section{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.etape{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.etapebtn {
+  border: solid;
+  border-radius: 90px;
+}
+
+.main{
+  display: flex;
+}
+
+.leftPart{
+  width: 70%;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.part{
+  border: solid;
+  margin: 15px;
+  padding: 15px;
+}
+
+.produit{
+  display: flex;
+  align-items: center;
+
+}
+
+.produit > * {
+  padding: 15px;
+}
+
+.produit > img {
+  width: 20%;
+  min-width: 200px;
+  height: auto;
+}
+
+.total{
+  display: flex;
+  justify-content: space-around;
+}

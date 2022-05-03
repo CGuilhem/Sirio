@@ -16,6 +16,7 @@ import { ContactComponent } from './body/contact/contact.component';
 import { ProduitComponent } from './body/accueil/produit/produit.component';
 import { LegalMentionsComponent } from './body/legal-mentions/legal-mentions.component';
 import { InscriptionComponent } from './body/inscription/inscription.component';
+import { FirstStepComponent } from './body/panier/first-step/first-step.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { InscriptionComponent } from './body/inscription/inscription.component';
     ProduitComponent,
     LegalMentionsComponent,
     InscriptionComponent,
+    FirstStepComponent,
   ],
   imports: [
     BrowserModule,

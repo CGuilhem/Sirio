@@ -1,5 +1,11 @@
+.filAriane{
+  margin: 30px 30px;
+  border-bottom: solid;
+}
+
 section {
   display: flex;
+  justify-content: center;
 }
 
 .allImages {
@@ -20,9 +26,22 @@ section {
 }
 
 .textPart {
-  width: 400px;
+  width: 15%;
+  padding-top: 50px;
+}
+
+.topPart{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .note {
-  border-bottom: 1px;
+  padding-bottom: 10px;
+  border-bottom: solid;
+}
+
+.stock{
+  padding-bottom: 10px;
+  border-bottom: solid;
 }
