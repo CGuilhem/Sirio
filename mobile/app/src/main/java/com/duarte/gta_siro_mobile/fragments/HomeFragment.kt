@@ -1,26 +1,22 @@
 package com.duarte.gta_siro_mobile.fragments
 
-import android.graphics.drawable.ClipDrawable.VERTICAL
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.duarte.gta_siro_mobile.MainActivity
+import com.duarte.gta_siro_mobile.ProductViewModel
 import com.duarte.gta_siro_mobile.R
 import com.duarte.gta_siro_mobile.adapter.ProductAdapter
 import com.duarte.gta_siro_mobile.model.ProductModel
 
-class HomeFragment(private val context : MainActivity) : Fragment() {
-
+class HomeFragment(private val context : MainActivity, productsList : List<ProductModel>) : Fragment() {
+    val productList = productsList
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
-        //Création d'une liste qui stock les produits
-        val productList = arrayListOf<ProductModel>()
-
-
 
         val view = inflater?.inflate(R.layout.fragment_home, container, false)
         val verticalRecyclerView = view.findViewById<RecyclerView>(R.id.verticalRecyclerView)

@@ -6,7 +6,17 @@
     <string name="menu_favorites">Favorites</string>
     <string name="menu_cart">Cart</string>
     <string name="menu_account">Account</string>
-    <string name="produit_parmis_les_mieux_not_s">Produits parmis les mieux notés</string>
+    <string name="most_liked_product">Most liked products</string>
+
+    <!-- Produit-->
+    <string name="product_name">Product name</string>
+    <string name="title_product_price">Product price</string>
+    <string name="product_price">$ $ $</string>
+    <string name="product_description">This is a good product description. This product description is soooooooooo long BLABLABLA.</string>
+    <string name="signIn">Sign in</string>
+    <string name="forgot_password">Forgot password ?</string>
+    <string name="create_account">Create account</string>
+
 
     <!-- Page d'accueil -->
 

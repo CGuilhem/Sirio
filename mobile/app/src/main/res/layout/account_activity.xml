@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp" />
+
+    <EditText
+        android:id="@+id/editText_login"
+        android:layout_width="390dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:text="E-mail"
+        android:inputType="text"
+        android:textColor="@color/gray"
+        android:textSize="14dp" />
+
+    <EditText
+        android:id="@+id/editText_password"
+        android:layout_width="390dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:text="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/gray"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/textView_forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:text="@string/forgot_password"
+        android:textColor="@color/teal_700"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/connexionButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/signIn"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView_createAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/create_account"
+        android:textColor="@color/teal_700"
+        android:textStyle="italic" />
+
+
+</LinearLayout>

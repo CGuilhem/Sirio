@@ -12,8 +12,10 @@ router.use((req, res, next) => {       // Ajout de headers pour éviter les erre
 });
 
 router.post('/signup', userController.signup);
+router.get('/verify-mail/:token', userController.verifyEmail);
 router.post('/login', userController.login);
-router.post('/admin', authentification.isAuthenticated, authentification.isAdministrator, userController.createAdmin);
-router.post('/google', userController.signupGoogle)
+router.post('/disconnect', userController.disconnect);
+router.post('/admin', authentification.isAdministrator, userController.createAdmin);
+router.post('/google', userController.signupGoogle);
 
 module.exports = router;
