@@ -16,7 +16,8 @@ router.use((req, res, next) => {       // Ajout de headers pour éviter les erre
 router.get('/', meubleController.getAllMeubles);
 router.get('/:id', meubleController.getOneMeuble);
 router.get('/type/:categorie', meubleController.getOneCategorie);
-router.post('/', authentification.isAuthenticated, multer, meubleController.createMeuble);
+router.post('/', authentification.isAdministrator, multer, meubleController.createMeuble);
+router.delete('/:id', authentification.isAdministrator, meubleController.deleteMeuble);
 
 /*
 router.put('/:id', auth, multer, stuffCtrl.modifyThing);

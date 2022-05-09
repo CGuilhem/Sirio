@@ -44,3 +44,24 @@ exports.createMeuble = (req, res, next) => {
         .then(() => res.status(201).json({ message: "Meuble enregistré" }))
         .catch(error => res.status(400).json({ error: error }));
 }
+
+exports.deleteMeuble = (req, res, next) => {
+    console.log("Requête deleteMeuble");
+
+    Meuble.findOne({ _id: req.params.id })
+        .then(thing => {
+            if (!thing) {
+                res.status(404).json({
+                error: new Error('Aucun meuble trouvé !')
+                });
+            }
+        
+            const filename = thing.imageUrl.split('/Images/')[1];
+            fileSystem.unlink(`images/${filename}`, () => {
+                Meuble.deleteOne({ _id: req.params.id })
+                .then(() => res.status(200).json({ message: 'Meuble supprimé !'}))
+                .catch(error => res.status(400).json({ error }));
+            });
+        })
+        .catch(error => res.status(500).json({ error }));
+};
