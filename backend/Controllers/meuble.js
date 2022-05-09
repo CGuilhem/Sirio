@@ -33,7 +33,7 @@ exports.createMeuble = (req, res, next) => {
 
     const tabImagesUrl = [String];
     req.files.forEach(file => {
-        tabImagesUrl.push(`${req.protocol}://${req.get('host')}/images/${file.filename}`);
+        tabImagesUrl.push(`${req.protocol}://${req.get('host')}/Images/${file.filename}`);
     });
 
     const meuble = new Meuble({
