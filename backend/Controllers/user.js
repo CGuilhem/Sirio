@@ -7,12 +7,12 @@ const nanoid = require('nanoid');
 const User = require('../Models/User');
 
 const transporter = nodeMailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
+  host: process.env.HOST_MAIL,
+  port: process.env.PORT_MAIL,
   secure: true, 
   auth: {
-      user: 'rennes1fac@gmail.com',
-      pass: 'j6Aax4tBrCK4JLZ'
+      user: process.env.USER_MAIL,
+      pass: process.env.PASSWORD_MAIL
   }
 });
 

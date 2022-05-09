@@ -1,13 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');  // Pour grandement faciliter les lectures et écritures avec MongoDB
 const cookieParser = require('cookie-parser');
+require('dotenv').config();
 
 //const path = require('path')
 
 const meubleRoutes = require('./Routes/meuble')
 const userRoutes = require('./Routes/user')
 
-mongoose.connect('mongodb+srv://Go-fullstack:rxFpULW7t8iQ37v@go-fullstack.g95yy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect(process.env.MONGODB,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
 .then(() => console.log('Connexion à MongoDB réussie !'))
