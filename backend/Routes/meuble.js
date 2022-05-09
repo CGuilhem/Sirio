@@ -18,6 +18,7 @@ router.get('/:id', meubleController.getOneMeuble);
 router.get('/type/:categorie', meubleController.getOneCategorie);
 router.post('/', authentification.isAdministrator, multer, meubleController.createMeuble);
 router.delete('/:id', authentification.isAdministrator, meubleController.deleteMeuble);
+router.put('/:id', authentification.isAdministrator, meubleController.updateMeuble);
 
 /*
 router.put('/:id', auth, multer, stuffCtrl.modifyThing);
