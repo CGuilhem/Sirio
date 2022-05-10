@@ -19,7 +19,7 @@ exports.createCheckoutSession = async (req, res, next) => {
                 const storeItem = storeItems.get(item.id)
                 return {
                     price_data: {
-                        currency: "usd",
+                        currency: "eur",
                         product_data: {
                         name: storeItem.name,
                         },
