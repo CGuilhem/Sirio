@@ -18,5 +18,6 @@ router.post('/disconnect', userController.disconnect);
 router.post('/admin', authentification.isAdministrator, userController.createAdmin);
 router.post('/google', userController.signupGoogle);
 router.delete('/delete', authentification.isAdministrator, userController.deleteUser);
+router.put('/update', authentification.isAdministrator, userController.updateUser);
 
 module.exports = router;

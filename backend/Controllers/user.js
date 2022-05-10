@@ -158,3 +158,21 @@ exports.deleteUser = (req, res, next) => {
     })
     .catch(error => res.status(500).json({ error }));
 };
+
+exports.updateUser = (req, res, next) => {
+  console.log("Requête updateUser");
+
+  User.findOne({ email: req.body.email })
+    .then(user => {
+        if (!user) {
+          res.status(404).json({
+            error: 'Aucun utilisateur trouvé !'
+          });
+        } else {
+          User.updateOne({ email: req.body.email }, { ...req.body.user })
+            .then(() => res.status(200).json({ message: 'Utilisateur modifié !'}))
+            .catch(error => res.status(400).json({ error }));
+        }
+    })
+    .catch(error => res.status(500).json({ error }));
+};
