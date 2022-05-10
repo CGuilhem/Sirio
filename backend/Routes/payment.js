@@ -12,6 +12,6 @@ router.use((req, res, next) => {       // Ajout de headers pour éviter les erre
     next();
 });
 
-router.post('/create-checkout-session', authentification.isAdministrator, paymentController.createCheckoutSession);
+router.post('/create-checkout-session', authentification.isAuthenticated, paymentController.createCheckoutSession);
 
 module.exports = router;
