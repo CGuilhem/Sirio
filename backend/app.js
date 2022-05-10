@@ -7,6 +7,7 @@ require('dotenv').config();
 
 const meubleRoutes = require('./Routes/meuble')
 const userRoutes = require('./Routes/user')
+const paymentRoutes = require('./Routes/payment')
 
 mongoose.connect(process.env.MONGODB,
   { useNewUrlParser: true,
@@ -23,5 +24,6 @@ app.use(express.json()); // Pour pouvoir lire les corps des requêtes applicatio
 
 app.use('/api/meuble', meubleRoutes);
 app.use('/api/auth', userRoutes);
+app.use('/api/payment', paymentRoutes);
 
 module.exports = app; // Pour pouvoir l'utiliser depuis le serveur node
