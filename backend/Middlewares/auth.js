@@ -10,7 +10,7 @@ exports.isAuthenticated = (req, res, next) => {
         // console.log(req.body.userId)
         // console.log(decodedToken.isAdministrator)
         const token = req.cookies.cookie_auth
-        const decodedToken = jsonWebToken.verify(token, 'RANDOM_TOKEN_SECRET');
+        const decodedToken = jsonWebToken.verify(token, process.env.ENCRYPTED_KEY);
 
         next();
 
@@ -23,7 +23,7 @@ exports.isAuthenticated = (req, res, next) => {
 exports.isAdministrator = (req, res, next) => {
     try {
         const token = req.cookies.cookie_auth
-        const decodedToken = jsonWebToken.verify(token, 'RANDOM_TOKEN_SECRET');
+        const decodedToken = jsonWebToken.verify(token, process.env.ENCRYPTED_KEY);
         const isAdministrator = decodedToken.isAdministrator;
  
         if (isAdministrator) {

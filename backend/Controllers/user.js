@@ -117,7 +117,7 @@ exports.login = (req, res, next) => {
               return res.status(401).json({ error: 'Adresse mail non confirmée' });
             }
 
-            const cookie_auth = jsonWebToken.sign({ userId: user._id, isAdministrator: user.isAdministrator },'RANDOM_TOKEN_SECRET', { expiresIn: '24h' });
+            const cookie_auth = jsonWebToken.sign({ userId: user._id, isAdministrator: user.isAdministrator }, process.env.ENCRYPTED_KEY, { expiresIn: '24h' });
           
             res.cookie("cookie_auth", cookie_auth, {
               httpOnly: true
