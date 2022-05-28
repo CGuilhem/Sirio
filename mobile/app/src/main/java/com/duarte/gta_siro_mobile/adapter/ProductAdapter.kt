@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.duarte.gta_siro_mobile.MainActivity
@@ -30,6 +31,7 @@ class ProductAdapter(val context: MainActivity, private val productList: List<Pr
         val productPictureLine  = view.findViewById<ImageView>(R.id.imageItem_Product_Line)
         val productPicturePopup  = view.findViewById<ImageView>(R.id.imageItem_Product)
         val favoriteIcon = view.findViewById<ImageView>(R.id.imageViewFavorite)
+        val cartIcon = view.findViewById<ImageView>(R.id.add_cart_button)
         val buttonSignIn = view.findViewById<ImageView>(R.id.connexionButton)
 
     }
@@ -55,27 +57,57 @@ class ProductAdapter(val context: MainActivity, private val productList: List<Pr
             Glide.with(context).load(Uri.parse(currentProduct.imagesUrl[0]))
                 .into(holder.productPicturePopup) //Uri.parse() permet de convertir l'url de l'image en une action android
         }
-            //Mettre à jour le nom du produit
+        //Mettre à jour le nom du produit
         holder.productName?.text = currentProduct.nom
 
         //Mise à jour du prix
         holder.productPrice?.text = currentProduct.prix.toString()
 
-//        //vérifier si le produit est liké
+//      Vérifier si le produit est liké
         if (currentProduct.liked) {
             holder.favoriteIcon?.setImageResource(R.drawable.ic__favorite_red_24)
+
         } else {
             holder.favoriteIcon?.setImageResource(R.drawable.ic_not_favorite)
+
+        }
+
+//      Vérifier si le produit est ajouté au panier
+        if (currentProduct.addedToCart) {
+            holder.cartIcon?.setImageResource(R.drawable.ic_remove_from_cart)
+        } else {
+            holder.cartIcon?.setImageResource(R.drawable.ic_add_in_cart)
         }
 
 //        Interaction sur le bouton like
         holder.favoriteIcon?.setOnClickListener {
             //Inverse ou non si le bouton est like ou pas
             currentProduct.liked = !currentProduct.liked
-            //Met à jour l'objet produit
-
-
+            if(currentProduct.liked == true){
+                val toast = Toast.makeText(context, "Product add to favorites", Toast.LENGTH_SHORT)
+                toast.show()
+            }else if(currentProduct.liked == false){
+                val toast = Toast.makeText(context, "Product remove from favorites", Toast.LENGTH_SHORT)
+                toast.show()
+            }
+            //Met à jour l'objet produit ??
         }
+
+//      Interaction sur le bouton panier
+        holder.cartIcon?.setOnClickListener {
+            //Inverse ou non si le bouton est like ou pas
+            currentProduct.addedToCart = !currentProduct.addedToCart
+            //Met à jour l'objet produit ??
+            if(currentProduct.addedToCart == true){
+                val toast = Toast.makeText(context, "Product add to cart", Toast.LENGTH_SHORT)
+                toast.show()
+            }else if(currentProduct.addedToCart == false){
+                val toast = Toast.makeText(context, "Product remove from cart", Toast.LENGTH_SHORT)
+                toast.show()
+            }
+        }
+
+
         //Interaction lors du click sur un produit (popup)
         holder.itemView.setOnClickListener {
             //affichage de la popup

@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity(){
             } else {
                 productList = it
                 //Chargement par défaut
-                loadFragment(HomeFragment(this, productList), R.string.menu_home)
+                loadFragment(HomeFragment(this, productList), R.string.menu_home, R.string.most_liked_product)
             }
         }
 
@@ -37,23 +37,23 @@ class MainActivity : AppCompatActivity(){
         navigationView.setOnItemSelectedListener { item->
             when(item.itemId){
                 R.id.menu_home_page -> {
-                    loadFragment(HomeFragment(this, productList), R.string.menu_home)
+                    loadFragment(HomeFragment(this, productList), R.string.menu_home, R.string.most_liked_product)
                     true
                 }
                 R.id.menu_search_page -> {
-                    loadFragment(SearchFragment(this), R.string.menu_search)
+                    loadFragment(SearchFragment(this), R.string.menu_search, R.string.catalog_of_product)
                     true
                 }
                 R.id.menu_favorites_page -> {
-                    loadFragment(FavoritesFragment(this, productList), R.string.menu_favorites)
+                    loadFragment(FavoritesFragment(this, productList), R.string.menu_favorites, R.string.all_my_favorites_products)
                     true
                 }
                 R.id.menu_cart_page -> {
-                    loadFragment(CartFragment(this), R.string.menu_cart)
+                    loadFragment(CartFragment(this, productList), R.string.menu_cart, R.string.all_my_products_added_to_cart)
                     true
                 }
                 R.id.menu_account_page -> {
-                    loadFragment(AccountFragment(this), R.string.menu_account)
+                    loadFragment(AccountFragment(this), R.string.menu_account, R.string.my_personnal_account)
                     true
                 }
                 else -> false
@@ -61,9 +61,11 @@ class MainActivity : AppCompatActivity(){
         }
     }
 
-    private fun loadFragment(fragment: Fragment, string: Int) {
+    private fun loadFragment(fragment: Fragment, string_title: Int, string_subTitle: Int) {
         //Actualiser le titre de la page
-        findViewById<TextView>(R.id.app_title).text = resources.getString(string)
+        findViewById<TextView>(R.id.app_title).text = resources.getString(string_title)
+        //Actualiser le sous-titre de la page
+        findViewById<TextView>(R.id.page_title).text = resources.getString(string_subTitle)
         //Injection du frament
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)                                                                //Remplace le contenu du container dans le layout

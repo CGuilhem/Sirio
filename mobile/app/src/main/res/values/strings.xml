@@ -7,6 +7,10 @@
     <string name="menu_cart">Cart</string>
     <string name="menu_account">Account</string>
     <string name="most_liked_product">Most liked products</string>
+    <string name="catalog_of_product">Catalog of products</string>
+    <string name="all_my_favorites_products">All my favorites products</string>
+    <string name="all_my_products_added_to_cart">All my products added to cart</string>
+    <string name="my_personnal_account">My personnal account</string>
 
     <!-- Produit-->
     <string name="product_name">Product name</string>

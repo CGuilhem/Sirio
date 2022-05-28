@@ -14,5 +14,6 @@ data class ProductModel (
     @SerializedName("stock") val stock : Int = 0,
     @SerializedName("note") val note : Double = 0.0,
     @SerializedName("userId") val userId: String = "Null",
-    var liked : Boolean = false
+    var liked : Boolean = false,
+    var addedToCart : Boolean = false
 )

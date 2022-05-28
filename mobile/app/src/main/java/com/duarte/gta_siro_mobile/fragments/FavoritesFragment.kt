@@ -27,6 +27,7 @@ class FavoritesFragment(private val context: MainActivity, productsList : List<P
 
         favortitesRecyclerView?.adapter = ProductAdapter(context, productList.filter { it.liked }, R.layout.item_horizontal_info_product)
         favortitesRecyclerView.layoutManager = LinearLayoutManager(context)
+
         //Permet d'espacer les produits
         favortitesRecyclerView.addItemDecoration(ProductItemDecoration())
 
